@@ -1,0 +1,56 @@
+{% extends "layout.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block title %}
+<title>The Godfatherbusiness | Login</title>
+{% endblock %}
+
+{% block content %}
+	<div class="limiter">
+		<div class="container-login100" style="background-image: url('static/images/bg-01.jpg');">
+			<div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
+				<form class="login100-form validate-form" method="POST" action="/login">
+					<span class="login100-form-title p-b-49">
+						The Godfather Business
+					</span>
+					{% with messages = get_flashed_messages() %}
+                    {% if messages %}
+                        {% for msg in messages %}
+                            <p>{{ msg }}</p>
+                        {% endfor %}
+                    {% endif %}
+                    {% endwith %} 
+					<div class="wrap-input100 validate-input m-b-23" data-validate = "Username is required">
+						{{ form.hidden_tag() }}
+						{{ wtf.form_field(form.username) }}
+						
+					</div>
+
+					<div class="wrap-input100 validate-input" data-validate="Password is required">
+						{{ wtf.form_field(form.password) }}
+						
+					</div>
+					
+					<div class="text-right p-t-8 p-b-31">
+						<a href="{{ url_for('contact') }}">
+							Forgot password?
+						</a>
+					</div>
+					
+					<div class="container-login100-form-btn">
+						<div class="wrap-login100-form-btn">
+							<div class="login100-form-bgbtn"></div>
+							<button class="login100-form-btn">
+								Login
+							</button>
+						</div>
+					</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	
+
+	<div id="dropDownSelect1"></div>
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block title %}
+<title>The Godfatherbusiness | 404 </title>
+{% endblock %}
+
+{% block content %}
+	<div class="limiter">
+		<div class="container-login100" style="background-image: url('static/images/bg-01.jpg');">
+			<div class="wrap-login100 p-l-70 p-r-70 p-t-65 p-b-54">
+                {% with messages = get_flashed_messages() %}
+                    {% if messages %}
+                        {% for msg in messages %}
+                            <h1>Oops!</h1>
+                            <hr>
+                            <h5>{{ msg }}</h5>
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %} 
+                <br></br>
+			</div>
+		</div>
+    </div>
+    <script>
+        var timer = setTimeout(function() {
+            window.location="{{ url_for('login')}}"
+        }, 3000);
+    </script>    
+{% endblock %}

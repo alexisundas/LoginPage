@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+
+{% block title %}
+ <title>The Godfatherbusinee | Help</title>
+{% endblock %}
+{% block content %}
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand ">Welcome {{ name }}</p></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto">
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+          <a class="btn btn-danger" href="{{url_for('log_out')}}" action="log_out" type="submit">Logout</a>
+      </form>
+    </div>
+  </nav>
+    <div class="container-homepage" style="background-image: url('static/images/bg-01.jpg');">
+        <div class="telegram-group p-l-55 p-r-55 p-t-65 p-b-54">
+            <h3>Instagram Pods</h3>
+            <br></br>
+            <div class='telegram-text'>
+                <p>Its a bit of a taboo. If you are in them, you probably won’t tell your friends about it.</p><br>
+
+                    <p>So – what is an Instagram pod? Well, in simple terms it’s a group of Instagrammers who get together to give and take engagement from each other. Imagine you and a couple of friends making a group on WhatsApp or Telegram and you all share your Instagram links within that chat group and everyone who is in this group has to like and comment on all the links shared.
+                    <br>
+                    <br>
+                    It’s really that simple. Well, maybe not. Remember when Instagram rolled out advertisement on its platform back in 2016? Its precisely at that time Instagram made some drastic changes to its feed, algorithm and ranking methods that essentially killed engagement for its users. Why did they do this? Well, to push people to pay for ads! Duh..
+                    <br>
+                    <br>                 
+                    Its pretty much at this exact time that pods came into picture. People who were used to getting a ton of likes and comments on a daily basis suddenly saw a massive dip in their engagement rate and had no idea what is happening. It was out of desperation that the suffering community of Instagram joined forces with each other and formed Instagram pods.
+                    <br></p>
+                    <br>
+                    <h4>Dive Deeper</h4>
+                    <p>Let's dive a bit deeper into this.</p><br>
+                    
+                    <p><strong>The Where</strong> <em>“Okay, so I know that pods are groups of people. Where exactly do I find them?”, is what you’re probably wondering now. Well, you’ll find pods over at famous chat apps like Telegram and WhatsApp, and more often then not, on Instagram itself within DM groups.</em><br>
+                        <strong>The Who</strong> – And then, who exactly are pods for? Well, its for Instagram influencers and bloggers. People who are active on Instagram and care much too much for having a healthy engagement ratio. It can be anyone from a beauty blogger to a fitness fanatic – there is something for everyone within these pods!<br>
+                        <strong>The What</strong> – What happens in the pod, stays in the pod. Imagine this – you find a way to get super genuine high quality comments on your posts. All your friends are wondering on how to are able to do that – everyone around you considers you as a famous person and what not – well, will you give this secret away? I don’t think so. Pods are great way to exchange likes, comments, views, shoutouts and so much more! Its more like a club than a community. A reserved club for members only.<br>
+                    <br><strong>Note:</strong> While you can find pods almost anywhere – you probably need a way to get invited into them. Most pods like ours at The Godfather Business are invite only community. You are welcome to join one or more of our 80+ pods over at Telegram . We boast over 100,000 members!</p>
+            </div>
+
+        </div>
+    </div>
+
+
+<div id="dropDownSelect1"></div>
+
+{% endblock %}

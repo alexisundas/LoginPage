@@ -85,7 +85,7 @@ def signup():
 @app.route('/')
 @login_required
 def home():
-    reader = csv.reader(open('app/groups.csv', 'r'))
+    reader = csv.reader(open('groups.csv', 'r'))
     group_list = []
     for row in reader:
         group_list.append({

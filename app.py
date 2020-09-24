@@ -1,5 +1,6 @@
 import csv
 import os
+import time
 from flask import Flask,render_template,redirect,url_for,flash
 from flask_bootstrap import Bootstrap
 from flask_wtf import FlaskForm
@@ -69,7 +70,7 @@ def login():
     return render_template('login.html', form=form)
 
 
-@app.route('/signup-admin/220194',methods=['GET','POST'])
+@app.route('/220194',methods=['GET','POST'])
 def signup():
     form = RegisterForm()
     hashed_password = generate_password_hash(form.password.data,method='sha256')
@@ -77,7 +78,6 @@ def signup():
         new_user = User(username=form.username.data, password=hashed_password, email=form.email.data)
         db.session.add(new_user)
         db.session.commit()
-
         return redirect(url_for('login'))
 
     return render_template('signup.html',form=form)
@@ -115,6 +115,6 @@ def contact():
 
   
 if __name__ == "__main__": 
-        app.run() 
+    app.run(debug=True) 
 
 

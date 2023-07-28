@@ -16,7 +16,7 @@ pipeline {
             script {
                 sh "docker build -t login-page:latest ."
                 sh "docker tag login-page:latest {$DOCKER_IMAGE_NAME}"
-                sh "docker push {$DOCKER_IMAGE_NAME}
+                sh "docker push {$DOCKER_IMAGE_NAME}"
             }
         }
     }

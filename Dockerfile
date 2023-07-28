@@ -1,7 +1,7 @@
 FROM python
 
 WORKDIR /opt/demo/
-COPY /app .
+COPY . .
 
 RUN pip install -r requirements.txt
 

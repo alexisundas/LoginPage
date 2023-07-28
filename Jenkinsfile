@@ -11,7 +11,6 @@ pipeline {
         
     }
 
-    }
     stages {
         stage('Debug Environment Variables') {
             steps {

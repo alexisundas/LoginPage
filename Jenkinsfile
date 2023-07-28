@@ -10,16 +10,7 @@ pipeline {
         
         
     }
-    stages {
-    stage('Build and Push Docker Image to Docker Hub') {
-        steps {
-            script {
-                sh "docker build -t login-page:latest ."
-                sh "docker tag login-page:latest {$DOCKER_IMAGE_NAME}"
-                sh "docker push {$DOCKER_IMAGE_NAME}"
-               }
-            }
-        }
+
     }
     stages {
         stage('Debug Environment Variables') {
@@ -39,7 +30,15 @@ pipeline {
                 }
             }
         }
-            
+        stage('Build and Push Docker Image to Docker Hub') {
+            steps {
+                script {
+                sh "docker build -t login-page:latest ."
+                sh "docker tag login-page:latest {$DOCKER_IMAGE_NAME}"
+                sh "docker push {$DOCKER_IMAGE_NAME}"
+               }
+            }
+        }    
 
     stage('Deploy to AWS EC2') {
         steps {

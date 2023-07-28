@@ -39,9 +39,9 @@ pipeline {
             }
         }    
 
-    stage('Deploy to AWS EC2') {
-        steps {
-            script {
+        stage('Deploy to AWS EC2') {
+            steps {
+                script {
                     sshagent(['aws-ssh-key']) {
                     // SSH into the EC2 instance and pull the latest Docker image
                         sh "ssh -o StrictHostKeyChecking=no ${AWS_INSTANCE_USER}@${AWS_INSTANCE_IP} 'docker pull ${DOCKER_IMAGE_NAME}:latest'"
@@ -52,7 +52,8 @@ pipeline {
                     // Run the Docker container on the EC2 instance
                         sh "ssh -o StrictHostKeyChecking=no ${AWS_INSTANCE_USER}@${AWS_INSTANCE_IP} 'sudo docker run -d --rm -p 80:80  ${DOCKER_IMAGE_NAME}:latest'"
                     }
-               }
+                }
             }
         }
     }
+}
